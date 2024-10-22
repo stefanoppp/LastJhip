@@ -255,3 +255,27 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [Leaflet]: https://leafletjs.com/
 [DefinitelyTyped]: https://definitelytyped.org/
 [Angular CLI]: https://cli.angular.io/
+---------------------------
+Bodyrequest for Post-Ventas
+{
+  "fechaVenta": "2024-10-22T02:41:48.929Z",
+  "precioFinal": 3500,
+  "dispositivo": {
+    "id": 1
+  },
+  "personalizaciones": [
+    {
+      "id": 1
+    }
+  ],
+  "adicionales": [
+    {
+      "id": 1,
+      "precio": 300
+    },
+    {
+      "id": 2,
+      "precio": 200
+    }
+  ]
+}
