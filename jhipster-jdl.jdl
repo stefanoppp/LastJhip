@@ -25,7 +25,11 @@ entity Dispositivo {
   precioBase BigDecimal required min(0),
   moneda Moneda required
 }
-
+enum Moneda{
+	ARS,
+  USD,
+  EUR
+}
 entity Caracteristica {
   id Long required,
   nombre String required,
@@ -58,11 +62,6 @@ entity Venta {
     fechaVenta ZonedDateTime required,
     precioFinal Float required
 }
-enum Moneda{
-	ARS,
-  USD,
-  EUR
-}
 
 
 relationship ManyToOne {
@@ -73,13 +72,17 @@ relationship ManyToOne {
   Venta{dispositivo required} to Dispositivo
 }
 
-relationship ManyToMany {
-    Venta{personalizaciones} to Personalizacion,
+relationship OneToMany {
+    Venta{personalizaciones} to Personalizacion
     Venta{adicionales} to Adicional
-} 
+}
+
+relationship ManyToOne {
+    Personalizacion{opcion} to Opcion
+}
+
 
 paginate Dispositivo, Caracteristica, Personalizacion, Opcion,Adicional, Venta with infinite-scroll
 service Dispositivo, Caracteristica, Personalizacion, Opcion, Adicional, Venta with serviceClass
 dto Dispositivo, Caracteristica, Personalizacion, Opcion, Adicional, Venta with mapstruct
-
 

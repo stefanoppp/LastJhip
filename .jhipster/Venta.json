@@ -20,23 +20,23 @@
   "pagination": "infinite-scroll",
   "relationships": [
     {
-      "otherEntityName": "dispositivo",
-      "relationshipName": "dispositivo",
-      "relationshipSide": "left",
-      "relationshipType": "many-to-one",
-      "relationshipValidateRules": "required"
-    },
-    {
       "otherEntityName": "personalizacion",
       "relationshipName": "personalizaciones",
       "relationshipSide": "left",
-      "relationshipType": "many-to-many"
+      "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "adicional",
       "relationshipName": "adicionales",
       "relationshipSide": "left",
-      "relationshipType": "many-to-many"
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "dispositivo",
+      "relationshipName": "dispositivo",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
     }
   ],
   "searchEngine": "no",
